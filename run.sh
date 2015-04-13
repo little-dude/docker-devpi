@@ -25,7 +25,7 @@ function start_devpi_server () {
     # Configure the default client if necessary
     if [[ ! -f ${DEVPI_SERVERDIR}/.serverversion ]]; then
       devpi use http://${DEVPI_SERVERIP}:${DEVPI_SERVERPORT}
-      devpi login root --password="${DEVPI_CLIENTPASSWORD}"
+      devpi login root --password=""
       devpi user -m root password="${DEVPI_CLIENTPASSWORD}"
       devpi index -y -c public pypi_whitelist='*'
     fi
